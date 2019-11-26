@@ -2,4 +2,5 @@
 // import './creation';
 // import './subjects';
 // import './operators';
-import './canvas';
+// import './canvas';
+import './redux';
