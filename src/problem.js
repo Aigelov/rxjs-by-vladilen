@@ -3,11 +3,13 @@ import {
   filter,
   map,
   scan,
-  take
+  take,
+  tap
 } from 'rxjs/operators';
 
 const btn = document.getElementById('interval');
 const rxjsBtn = document.getElementById('rxjs');
+const rxjsMine = document.getElementById('rxjs-mine');
 const display = document.querySelector('#problem .result');
 
 const people = [
@@ -52,5 +54,5 @@ btn.addEventListener('click', () => {
       clearInterval(interval);
       btn.disabled = false;
     }
-  }, 1000)
+  }, 500)
 });

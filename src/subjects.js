@@ -4,38 +4,32 @@ import {
   Subject,
 } from 'rxjs';
 
+const btnSubject1 = document.getElementById('subject1');
+const btnSubject2 = document.getElementById('subject2');
+const btnSubject3 = document.getElementById('subject3');
+const btnSubject4 = document.getElementById('subject4');
+
 /** SUBJECT */
-// document.addEventListener('click', () => {
-//   const stream$ = new Subject();
-//   stream$.subscribe(value => {
-//     console.log(value);
-//   });
-//   stream$.next('Hello');
-//   stream$.next('Rx');
-//   stream$.next('JS');
-// });
+const stream$ = new Subject();
+stream$.subscribe(value => {
+  console.log(value);
+});
 
 
 /** BEHAVIOR_SUBJECT */
-// document.addEventListener('click', () => {
-//   const stream$ = new BehaviorSubject('Hello');
-//   stream$.subscribe(value => {
-//     console.log(value);
-//   });
-//   stream$.next('World');
-//   stream$.next('Rx');
-//   stream$.next('JS');
+// const stream$ = new BehaviorSubject('Hello');
+// stream$.subscribe(value => {
+//   console.log(value);
 // });
 
 
 /** REPLAY_SUBJECT */
-document.addEventListener('click', () => {
-  const stream$ = new ReplaySubject(2);
-  stream$.next('Hello');
-  stream$.next('World');
-  stream$.next('Rx');
-  stream$.next('JS');
-  stream$.subscribe(value => {
-    console.log(value);
-  });
-});
+// const stream$ = new ReplaySubject(2);
+// stream$.subscribe(value => {
+//   console.log(value);
+// });
+
+btnSubject1.addEventListener('click', () => stream$.next('Hi'));
+btnSubject2.addEventListener('click', () => stream$.next('Rx'));
+btnSubject3.addEventListener('click', () => stream$.next('JS'));
+btnSubject4.addEventListener('click', () => stream$.next('Buddy'));
